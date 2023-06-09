@@ -18,9 +18,9 @@ int getMCD(int numero1, int numero2)
 
 Racional Racional::simplificar()
 {
+	// Pueden consultar el porque aquí: https://www.youtube.com/watch?v=0opNDyuqCfg
 	int mcd = getMCD(this->n, this->m);
 	return Racional(this->n / mcd, this->m / mcd);
-	// Pueden consultar el porque aquí: https://www.youtube.com/watch?v=0opNDyuqCfg
 }
 
 Racional::Racional(int dividendo, int divisor) : n(dividendo), m(divisor) {}
@@ -36,11 +36,12 @@ Racional Racional::operator=(Racional racional)
 // UNARIOS...
 Racional Racional::operator+() {
 	// ¿Que cambia? 
+	return *this;
 }
 
 Racional Racional::operator-() {
 	// ¿Que cambia? 
-	this->n * -1, this->m * -1;
+	return Racional(this->n * -1, this->m * -1);
 }
 
 // BINARIOS...
@@ -104,9 +105,12 @@ void Racional::operator/=(Racional racional)
 bool Racional::operator==(Racional racional)
 {
 	Racional simplifyRational = this->simplificar();
-	racional = racional.simplificar();
+	Racional aux = racional.simplificar();
 
-	return (simplifyRational.num() == racional.n) && (simplifyRational.den() == racional.m);
+	simplifyRational.showFraction();
+	showFraction();
+
+	return (simplifyRational.num() == aux.n) && (simplifyRational.den() == aux.m);
 }
 
 bool Racional::operator!=(Racional racional)
