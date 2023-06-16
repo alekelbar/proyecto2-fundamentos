@@ -32,7 +32,6 @@ Racional Racional::operator=(Racional racional)
 	return Racional(racional.n, racional.m);
 }
 
-
 // UNARIOS...
 Racional Racional::operator+() {
 	// ¿Que cambia? 
