@@ -12,14 +12,6 @@ private:
 	//miscelaneas
 	Racional simplificar();
 public:
-	// EXTRA BORRAR
-	void showFraction() {
-		Racional auxSimplify = this->simplificar();
-
-		std::cout << char(13) << auxSimplify.num() << "\n";
-		std::cout << char(13) << "-\n";
-		std::cout << char(13) << auxSimplify.den() << "\n";
-	}
 	// Constructores, destructor
 	Racional(int, int);
 	Racional(): n(0), m(1) {}
@@ -27,8 +19,6 @@ public:
 	//// Proyecciones
 	inline int num() { return this->n; } //numerador
 	inline int den() { return this->m; } //denominador
-	//// Asignacion
-	Racional operator=(Racional);
 	//// Operadores aritmeticos
 	////unarios
 	Racional operator+();

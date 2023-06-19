@@ -27,10 +27,6 @@ Racional::Racional(int dividendo, int divisor) : n(dividendo), m(divisor) {}
 
 Racional::~Racional(){}
 
-Racional Racional::operator=(Racional racional)
-{
-	return Racional(racional.n, racional.m);
-}
 
 // UNARIOS...
 Racional Racional::operator+() {
@@ -105,9 +101,6 @@ bool Racional::operator==(Racional racional)
 {
 	Racional simplifyRational = this->simplificar();
 	Racional aux = racional.simplificar();
-
-	simplifyRational.showFraction();
-	showFraction();
 
 	return (simplifyRational.num() == aux.n) && (simplifyRational.den() == aux.m);
 }
